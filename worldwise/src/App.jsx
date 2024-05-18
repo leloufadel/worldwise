@@ -12,11 +12,13 @@ import AppLayout from "./pages/AppLayout";
 import CityList from "./components/CityList";
 import CountryList from "./components/CountryList";
 import Form from "./components/Form";
+import { CitiesProvider } from "./contexts/CitiesContext";
 function App() {
 
 
 
 return (
+  <CitiesProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -32,6 +34,7 @@ return (
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
+    </CitiesProvider>
   );
 }
 
